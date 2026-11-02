@@ -220,7 +220,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .tourtag{font:11px var(--mono);letter-spacing:.2em;color:var(--a)}
 @media(max-width:860px){.lab,.orbitw,.ppanel{grid-template-columns:1fr}#dots{display:none}.pbar button{font-size:0;padding:12px 6px;text-align:center}.pbar button b{margin:0;font-size:11px}#lab{height:170px}}
 @media(prefers-reduced-motion:reduce){#bg{display:none}}
-</style>
+.ab{align-items:start}.abcol{display:flex;flex-direction:column;gap:16px;min-width:0}.abbar{display:flex;justify-content:center}.abbar .switch button{padding:12px 30px;font-size:15px}</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -258,9 +258,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
  <h2 class="rv">One scene. <em>Two voices.</em></h2>
  <p class="lead rv">Switch between source and dub mid-play. The picture keeps its place.</p>
  <div class="ab rv">
-  <div class="glass stage"><video id="abv" playsinline controls preload="none"></video></div>
+  <div class="abcol"><div class="glass stage"><video id="abv" playsinline controls preload="none"></video></div><div class="abbar"><div class="switch" role="group" aria-label="Track"><span class="k" id="abk"></span><button id="abA" aria-pressed="true">Source</button><button id="abB" aria-pressed="false">Dub</button></div></div></div>
   <div class="glass abside">
-   <div class="switch" role="group" aria-label="Track"><span class="k" id="abk"></span><button id="abA" aria-pressed="true">Source</button><button id="abB" aria-pressed="false">Dub</button></div>
    <h3 id="abt"></h3>
    <div class="scenes" id="abs"></div>
    <p class="kbd">Keyboard: <kbd>A</kbd> source · <kbd>B</kbd> dub</p>
