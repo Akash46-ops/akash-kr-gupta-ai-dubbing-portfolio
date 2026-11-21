@@ -1,4 +1,5 @@
 const S=[
+ {f:'dub-with-lip-sync',from:'Hindi',to:'English + Bengali',t:'Dub with Lip Sync',fmt:'Drama'},
  {f:'english-hindi-dub',o:'english-hindi-original',from:'Hindi',to:'English',t:'English Dub',fmt:'Drama'},
  {f:'english-hebrew-accent-dub',o:'english-hebrew-original',from:'Hebrew',to:'English',t:'Hebrew-accented English Dub',fmt:'Drama'},
  {f:'german-dub',o:'german-original',from:'Source',to:'German',t:'AI German Dub',fmt:'Vertical drama',v:1},
@@ -82,8 +83,8 @@ function onScroll(){const y=scrollY,h=document.documentElement.scrollHeight-inne
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 
 /* ===== v3 interactions ===== */
-const LANGS=[...new Set(S.map(s=>s.to))];
 const CODE={English:'EN',German:'DE',Spanish:'ES',Hindi:'HI',Korean:'KO',Bengali:'BN',Tamil:'TA',Telugu:'TE',Kannada:'KN',Arabic:'AR',Russian:'RU'};
+const LANGS=[...new Set(S.map(s=>s.to).filter(l=>CODE[l]))];
 function filterLang(l){fl=l;document.querySelectorAll('.chip[data-k="to"]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.v===l));render();bindCards()}
 const go=id=>document.getElementById(id).scrollIntoView({behavior:reduce?'auto':'smooth'});
 

@@ -202,6 +202,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .pg a{padding:6px 14px;border-radius:99px;font-size:13px;text-decoration:none;color:var(--mute)}
 .pg a[aria-current=page]{background:var(--ink);color:#0a0a10}.pg a:not([aria-current]):hover{color:var(--ink)}
 .more-l{display:flex;justify-content:center;margin-top:30px}
+.master{margin-top:36px}.master .stage{border-radius:22px}.master-meta{margin-top:14px}.master-meta .eyebrow{display:block}.master-meta b{display:block;font:400 24px var(--serif);margin:8px 0 4px}.master-meta small{color:var(--mute);font-size:13px}
 .hero.sm{padding-bottom:20px;min-height:0}.hero.sm h1{font-size:clamp(40px,7vw,84px)}
 .lig{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:28px}
 .lic{display:flex;flex-direction:column;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--glass);transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s;animation:in .5s both}
