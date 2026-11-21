@@ -52,17 +52,13 @@
 </div></header>
 
 <section id="listen"><div class="wrap">
- <p class="eyebrow rv">01 · Hear the difference</p>
- <h2 class="rv">One scene. <em>Two voices.</em></h2>
- <p class="lead rv">Switch between source and dub mid-play. The picture keeps its place.</p>
- <div class="ab rv">
-  <div class="abcol"><div class="glass stage"><video id="abv" playsinline controls preload="none"></video></div><div class="abbar"><div class="switch" role="group" aria-label="Track"><span class="k" id="abk"></span><button id="abA" aria-pressed="true">Source</button><button id="abB" aria-pressed="false">Dub</button></div></div></div>
-  <div class="glass abside">
-   <h3 id="abt"></h3>
-   <div class="scenes" id="abs"></div>
-   <p class="kbd">Keyboard: <kbd>A</kbd> source · <kbd>B</kbd> dub</p>
-  </div>
- </div>
+ <p class="eyebrow rv">01 · Master sample</p>
+ <h2 class="rv">Dub with <em>Lip Sync.</em></h2>
+ <p class="lead rv">My latest master sample: one scene, dubbed with lip sync from Hindi into English and Bengali.</p>
+ <figure class="master rv">
+  <div class="glass stage"><video id="masterv" controls playsinline preload="metadata" poster="assets/img/dub-with-lip-sync.jpg" src="assets/video/dub-with-lip-sync.mp4" title="Dub with Lip Sync"></video></div>
+  <figcaption class="master-meta"><small>Hindi → English + Bengali · Drama</small></figcaption>
+ </figure>
 </div></section>
 
 <section id="lab-s"><div class="wrap">
@@ -80,11 +76,17 @@
 <section id="work"><div class="wrap">
  <p class="eyebrow rv">03 · Featured samples</p>
  <h2 class="rv">Find your language. <em>Press play.</em></h2>
- <p class="lead rv">The latest master sample first, then six favourites. Hover to preview, click to watch. Pick a planet to open that language in the full library.</p>
- <figure class="master rv">
-  <div class="glass stage"><video id="masterv" controls playsinline preload="metadata" poster="assets/img/dub-with-lip-sync.jpg" src="assets/video/dub-with-lip-sync.mp4" title="Dub with Lip Sync"></video></div>
-  <figcaption class="master-meta"><span class="eyebrow">Master sample</span><b>Dub with Lip Sync</b><small>Hindi → English + Bengali · Drama</small></figcaption>
- </figure>
+ <p class="lead rv">Compare source and dub, then explore six favourites. Hover to preview, click to watch. Pick a planet to open that language in the full library.</p>
+ <h3 class="rv" style="font:400 30px var(--serif);margin:36px 0 6px">One scene. <em>Two voices.</em></h3>
+ <p class="lead rv">Switch between source and dub mid-play. The picture keeps its place.</p>
+ <div class="ab rv" style="margin-top:20px">
+  <div class="abcol"><div class="glass stage"><video id="abv" playsinline controls preload="none"></video></div><div class="abbar"><div class="switch" role="group" aria-label="Track"><span class="k" id="abk"></span><button id="abA" aria-pressed="true">Source</button><button id="abB" aria-pressed="false">Dub</button></div></div></div>
+  <div class="glass abside">
+   <h3 id="abt"></h3>
+   <div class="scenes" id="abs"></div>
+   <p class="kbd">Keyboard: <kbd>A</kbd> source · <kbd>B</kbd> dub</p>
+  </div>
+ </div>
  <div class="orbitw rv"><svg id="orbit" viewBox="0 0 340 340" role="group" aria-label="Languages, select one to filter samples"></svg><div class="olab"><b id="ob">11 languages</b><p id="op">Hover a planet to see it. Click to open its samples.</p></div></div>
  <div class="grid" id="grid"></div>
  <div class="more-l"><a class="btn g" href="content.html#library">See all 16 samples →</a></div>
