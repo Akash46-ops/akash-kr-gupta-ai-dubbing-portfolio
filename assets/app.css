@@ -240,3 +240,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .crow{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;align-items:center}
 .cpic{width:340px}
 @media(max-width:900px){.crow{grid-template-columns:1fr;gap:24px}.cpic{width:220px;justify-self:center;order:-1}}
+/* French → Hindi side-by-side */
+.sbs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}.sbsv{margin:0;min-width:0}
+.sbsv .stage{border-radius:22px;transition:box-shadow .3s,border-color .3s}.sbsv.on .stage{border-color:rgba(159,216,255,.55);box-shadow:0 0 0 4px rgba(159,216,255,.12)}
+.sbsl,.sbsh{position:absolute;top:12px;font:12px var(--mono);letter-spacing:.06em;padding:5px 10px;border-radius:99px;background:rgba(10,10,16,.72);border:1px solid var(--line);pointer-events:none}
+.sbsl{left:12px}.sbsh{right:12px;color:var(--b);opacity:0;transition:opacity .3s}.sbsv.on .sbsh{opacity:1}
+.sbsbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 18px;margin-top:18px}.sbsbar .switch button{padding:10px 18px}
+@media(max-width:760px){.sbs{grid-template-columns:1fr;gap:12px}}

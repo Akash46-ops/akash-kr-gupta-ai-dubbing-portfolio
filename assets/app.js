@@ -8,6 +8,7 @@ const S=[
  {f:'anim-spanish',from:'Source',to:'Spanish',t:'Animation · LatAm Spanish',fmt:'Animation'},
  {f:'spanish-latam',from:'Source',to:'Spanish',t:'LatAm Spanish Dub',fmt:'Drama'},
  {f:'hindi-chinese',from:'Chinese',to:'Hindi',t:'Chinese → Hindi',fmt:'Vertical drama',v:1},
+ {f:'fr-hi-dub',from:'French',to:'Hindi',t:'French → Hindi · Creator series',fmt:'Creator video'},
  {f:'korean-dub',from:'Source',to:'Korean',t:'Korean Dub',fmt:'Vertical drama',v:1},
  {f:'bengali-marathi',from:'Marathi',to:'Bengali',t:'Marathi → Bengali',fmt:'Vertical drama',v:1},
  {f:'kannada-dub',from:'Source',to:'Kannada',t:'Kannada Dub',fmt:'Feature film'},
@@ -41,6 +42,23 @@ $('abs').onclick=e=>{const b=e.target.closest('button');if(b)scene(+b.dataset.i)
 $('abA').onclick=()=>setSide('A');$('abB').onclick=()=>setSide('B');
 addEventListener('keydown',e=>{if(e.target.matches('input,textarea')||$('lb').classList.contains('open'))return;const r=$('listen').getBoundingClientRect();if(r.top>innerHeight||r.bottom<0)return;if(e.key==='a'||e.key==='A')setSide('A');if(e.key==='b'||e.key==='B')setSide('B')});
 scene(0);addEventListener('resize',knob);}
+
+/* French → Hindi side-by-side: one play button, both videos in sync, one audible */
+(()=>{if(!$('sbs'))return;const A=$('sbsA'),B=$('sbsB'),P2=$('sbsP'),fig=[A,B].map(v=>v.closest('.sbsv'));let hear='B';
+ const fmt=t=>{t=Math.floor(t||0);return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')};
+ const knob2=()=>{const b=hear==='A'?$('sbsHA'):$('sbsHB');$('sbsk').style.left=b.offsetLeft+'px';$('sbsk').style.width=b.offsetWidth+'px';$('sbsHA').setAttribute('aria-pressed',hear==='A');$('sbsHB').setAttribute('aria-pressed',hear==='B')};
+ const setHear=h=>{hear=h;A.muted=h!=='A';B.muted=h!=='B';fig[0].classList.toggle('on',h==='A');fig[1].classList.toggle('on',h==='B');knob2()};
+ const ui=()=>{const pl=!A.paused;P2.textContent=pl?'❚❚':'▶';P2.setAttribute('aria-label',pl?'Pause both':'Play both')};
+ const play=()=>{B.currentTime=A.currentTime;Promise.all([A.play(),B.play()]).catch(()=>{}).then(ui)};
+ const pause=()=>{A.pause();B.pause();B.currentTime=A.currentTime;ui()};
+ P2.onclick=()=>A.paused?play():pause();
+ [A,B].forEach(v=>v.onclick=()=>A.paused?play():pause());
+ A.addEventListener('timeupdate',()=>{$('sbst').textContent=fmt(A.currentTime)+' / '+fmt(A.duration);if(!A.paused&&!B.seeking&&Math.abs(B.currentTime-A.currentTime)>.3)B.currentTime=A.currentTime});
+ A.addEventListener('ended',()=>{B.pause();A.currentTime=B.currentTime=0;ui()});
+ $('sbsHA').onclick=()=>setHear('A');$('sbsHB').onclick=()=>setHear('B');
+ new IntersectionObserver(e=>{if(!e[0].isIntersecting&&!A.paused)pause()}).observe($('sbs'));
+ setHear('B');ui();addEventListener('resize',knob2);
+})();
 
 /* explorer */
 const langs=['All',...new Set(S.map(s=>s.to))],fmts=['All',...new Set(S.map(s=>s.fmt))];let fl='All',ff='All',list=S;
