@@ -10,8 +10,6 @@ const S=[
  {f:'hindi-chinese',from:'Chinese',to:'Hindi',t:'Chinese → Hindi',fmt:'Vertical drama',v:1},
  {f:'korean-dub',from:'Source',to:'Korean',t:'Korean Dub',fmt:'Vertical drama',v:1},
  {f:'bengali-marathi',from:'Marathi',to:'Bengali',t:'Marathi → Bengali',fmt:'Vertical drama',v:1},
- {f:'tamil-dub',from:'Source',to:'Tamil',t:'Tamil Dub',fmt:'Vertical drama',v:1},
- {f:'telugu-dub',from:'Source',to:'Telugu',t:'Telugu Dub',fmt:'Vertical drama',v:1},
  {f:'kannada-dub',from:'Source',to:'Kannada',t:'Kannada Dub',fmt:'Feature film'},
  {f:'clip_A',from:'Source',to:'Arabic',t:'Emotion test · Fear',fmt:'Emotion test'},
  {f:'clip_R',from:'Source',to:'Russian',t:'Emotion test · Comic timing',fmt:'Emotion test'}
